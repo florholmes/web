@@ -1,0 +1,195 @@
+/* =======================================
+   ESTILO PÁGINA DE TRABAJO – HORROR PSICOLÓGICO
+   ======================================= */
+
+body.pagina-trabajo {
+  background-color: #0b0b0b; /* negro profundo */
+  color: #e0dcdc; /* gris pálido para lectura */
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* PALETA HORROR PSICOLÓGICO */
+:root {
+  --color-acento: #8b0000; /* rojo sangre */
+  --color-secundario: #4b0082; /* morado oscuro */
+  --color-suave: rgba(255, 255, 255, 0.05); /* suave tenue */
+  --color-texto: #e0dcdc; /* gris pálido */
+}
+
+/* ================= HEADER ================= */
+.header-secundario {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: linear-gradient(180deg, rgba(139, 0, 0, 0.2), transparent);
+  border-bottom: 1px solid var(--color-acento);
+  box-shadow: 0 2px 20px rgba(139, 0, 0, 0.5);
+}
+
+.header-secundario h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.8rem;
+  color: var(--color-acento);
+  text-shadow: 0 0 10px rgba(139, 0, 0, 0.6);
+  letter-spacing: 1px;
+}
+
+/* ================= CONTENIDO ================= */
+.contenido-trabajo {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* ================= DESCRIPCIÓN ================= */
+.descripcion h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-acento);
+  text-shadow: 0 0 8px rgba(139, 0, 0, 0.6);
+  border-bottom: 1px solid var(--color-acento);
+  display: inline-block;
+  padding-bottom: 0.4rem;
+}
+
+.descripcion p {
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+  color: #ccc;
+  background: var(--color-suave);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+/* ================= GALERÍA ================= */
+.galeria-neon {
+  background-color: #0a0a0a;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.galeria-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.galeria-grid a {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  transition: transform 0.3s ease;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  object-fit: cover;
+  border: none;
+  box-shadow: 0 0 30px rgba(139, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 35px rgba(139, 0, 0, 0.5);
+}
+
+/* ================= LIGHTBOX ================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.97);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.lightbox:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 0 50px rgba(139, 0, 0, 0.8);
+}
+
+.lightbox .cerrar {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0.3em 0.6em;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.lightbox .cerrar:hover {
+  background: rgba(139, 0, 0, 0.4);
+}
+
+/* ================= DETALLES ================= */
+.detalle h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-acento);
+  margin-top: 2rem;
+  text-shadow: 0 0 8px rgba(139, 0, 0, 0.6);
+}
+
+.detalle ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detalle li {
+  background: var(--color-suave);
+  border-left: 3px solid var(--color-acento);
+  margin: 0.6rem 0;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+}
+
+/* ================= FOOTER ================= */
+.footer-secundario {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--color-acento);
+  box-shadow: 0 -5px 15px rgba(139, 0, 0, 0.2);
+  color: #888;
+  background: #0b0b0b;
+  font-size: 0.9rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .header-secundario h1 {
+    font-size: 2rem;
+  }
+
+  .descripcion p {
+    font-size: 1rem;
+  }
+
+  .galeria-grid a {
+    max-width: 95%;
+  }
+
+  .detalle li {
+    font-size: 0.95rem;
+  }
+}
