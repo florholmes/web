@@ -1,380 +1,402 @@
 /* =====================================================
-   🌌 PORTFOLIO - Flor Holmes
-   Estilo: Minimalismo Futurista Neón Sutil (sin deformaciones)
-   ===================================================== */
+🌌 PORTFOLIO FLOR HOLMES - CSS MEJORADO
+Estilo: Cyberpunk minimalista con neón, secciones con personalidad
+===================================================== */
 
 /* ===== VARIABLES ===== */
 :root {
-  --fondo: #050505;
-  --superficie: #0a0a0f;
-  --texto: #eaeaea;
-  --texto-secundario: #b5b5b5;
-  --acento: #39ff14;
-  --acento-sec: #ff00ff;
-  --borde: rgba(255, 255, 255, 0.08);
+--fondo: #050505;
+--superficie: #0a0a0f;
+--texto: #eaeaea;
+--texto-secundario: #b5b5b5;
+--acento: #39ff14;
+--acento-sec: #ff00ff;
+--borde: rgba(255, 255, 255, 0.08);
+--verde-neon: #00ff6a;
 }
 
 /* ===== RESET ===== */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
+  }
 
 html {
-  scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 body {
-  background: var(--fondo);
-  color: var(--texto);
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  overflow-x: hidden;
+background: var(--fondo);
+color: var(--texto);
+font-family: 'Poppins', sans-serif;
+line-height: 1.6;
+overflow-x: hidden;
 }
 
 /* ===== HEADER ===== */
-header {
-  background: rgba(5, 5, 5, 0.9);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--borde);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 18px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+header.header-mejorado {
+width: 100%;
+position: fixed;
+top: 0;
+left: 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 45px;
+z-index: 999;
+background: rgba(255, 0, 255, 0.08);
+backdrop-filter: blur(6px);
+border-bottom: 1px solid #ff00ff44;
+font-family: 'Orbitron', sans-serif;
 }
 
-.logo {
-  font-family: 'Orbitron', sans-serif;
-  color: var(--acento);
-  font-size: 1.5rem;
-  text-shadow: 0 0 8px var(--acento);
-  margin-bottom: 10px;
+.header-mejorado .logo {
+font-size: 1.6rem;
+font-weight: 700;
+color: var(--verde-neon);
+letter-spacing: 1px;
 }
 
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  list-style: none;
-  padding: 0;
+.nav-links {
+display: flex;
+gap: 32px;
+list-style: none;
 }
 
-nav a {
-  color: var(--texto);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+.nav-links a {
+text-decoration: none;
+color: var(--verde-neon);
+font-size: 0.95rem;
+letter-spacing: 0.5px;
+position: relative;
+padding-bottom: 3px;
+transition: 0.3s ease;
 }
 
-nav a:hover {
-  color: var(--acento);
-  text-shadow: 0 0 6px var(--acento);
+.nav-links a::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0%;
+height: 2px;
+background: var(--verde-neon);
+transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+width: 100%;
 }
 
 /* ===== HERO ===== */
-
-/* =======================================================
-   🌌 HERO CYBERPUNK COMPACTO Y EQUILIBRADO
-   ======================================================= */
-
 .hero {
-  position: relative;
-  height: 70vh; /* antes era 100vh */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  background: radial-gradient(circle at 50% 40%, #0d001a 0%, #000 90%);
-  border-bottom: 2px solid #ff00ff44;
-  padding: 60px 20px; /* le da aire sin ocupar todo */
+position: relative;
+height: 70vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+overflow: hidden;
+background: radial-gradient(circle at 50% 40%, #0d001a 0%, #000 90%);
+border-bottom: 2px solid #ff00ff44;
+padding: 60px 20px;
 }
 
-/* Fondo con halo neón sutil */
-.neon-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 40%, rgba(255,0,255,0.12), rgba(0,255,255,0.08), transparent 70%);
-  filter: blur(80px);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-/* Contenido central */
 .hero-contenido {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  max-width: 700px;
-  padding: 20px;
+position: relative;
+z-index: 2;
+color: #fff;
+max-width: 700px;
+padding: 20px;
 }
 
-/* Imagen de perfil */
 .perfil-cyber {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #00ffff;
-  box-shadow:
-    0 0 25px #00ffffaa,
-    0 0 50px #ff00ff55,
-    inset 0 0 20px #00ffff44;
-  animation: pulsoNeon 4s ease-in-out infinite;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+width: 180px;
+height: 180px;
+border-radius: 50%;
+object-fit: cover;
+border: 3px solid #00ffff;
+box-shadow: 0 0 25px #00ffffaa, 0 0 50px #ff00ff55, inset 0 0 20px #00ffff44;
+animation: pulsoNeon 4s ease-in-out infinite;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .perfil-cyber:hover {
-  transform: scale(1.08);
-  box-shadow:
-    0 0 30px #ff00ffaa,
-    0 0 70px #00ffffaa,
-    inset 0 0 25px #ff00ff55;
+transform: scale(1.08);
+box-shadow: 0 0 30px #ff00ffaa, 0 0 70px #00ffffaa, inset 0 0 25px #ff00ff55;
 }
 
 @keyframes pulsoNeon {
-  0%, 100% { box-shadow: 0 0 25px #00ffff88, 0 0 50px #ff00ff44; }
-  50% { box-shadow: 0 0 40px #00ffffaa, 0 0 80px #ff00ff88; }
+0%, 100% { box-shadow: 0 0 25px #00ffff88, 0 0 50px #ff00ff44; }
+50% { box-shadow: 0 0 40px #00ffffaa, 0 0 80px #ff00ff88; }
 }
 
-/* Tipografía */
 .hero h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.4rem;
-  margin-top: 25px;
-  color: #39ff14;
-  text-shadow: 0 0 15px #39ff1499, 0 0 25px #00ffff77;
+font-family: 'Orbitron', sans-serif;
+font-size: 2.4rem;
+margin-top: 25px;
+color: var(--acento);
+
 }
 
 .hero h2 {
-  font-size: 1.2rem;
-  color: #ff00ff;
-  margin-bottom: 10px;
-  text-shadow: 0 0 10px #ff00ff66;
+font-size: 1.2rem;
+color: var(--acento-sec);
+margin-bottom: 10px;
+text-shadow: 0 0 10px #ff00ff66;
 }
 
 .hero p {
-  font-size: 1rem;
-  color: #c8f8ff;
-  max-width: 500px;
-  margin: 0 auto;
-  text-shadow: 0 0 10px #00ffff33;
+font-size: 1rem;
+color: #c8f8ff;
+max-width: 500px;
+margin: 0 auto;
+text-shadow: 0 0 10px #00ffff33;
 }
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    padding: 80px 20px;
-  }
-
-  .perfil-cyber {
-    width: 140px;
-    height: 140px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero h2 {
-    font-size: 1rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-}
-
 
 /* ===== SOBRE MÍ ===== */
 .about {
-  background: var(--superficie);
-  text-align: center;
-  padding: 80px 20px;
+background: linear-gradient(135deg, #0a0a0f, #120012);
+text-align: center;
+padding: 90px 20px;
+position: relative;
+overflow: hidden;
 }
 
 .about h2 {
-  font-family: 'Orbitron', sans-serif;
-  color: var(--acento);
-  margin-bottom: 25px;
-  font-size: 2rem;
+font-family: 'Orbitron', sans-serif;
+color: #ff00ff;
+font-size: 2.4rem;
+margin-bottom: 30px;
+position: relative;
+}
+
+.about h2::after {
+content: '';
+position: absolute;
+left: 50%;
+bottom: -10px;
+transform: translateX(-50%);
+width: 80px;
+height: 3px;
+background: var(--acento);
+border-radius: 2px;
+box-shadow: 0 0 8px var(--acento), 0 0 16px #00ffff;
 }
 
 .about p {
-  max-width: 720px;
-  margin: auto;
-  color: var(--texto-secundario);
-  font-size: 1.05rem;
-  line-height: 1.8;
+max-width: 700px;
+margin: auto;
+color: #dcdcdc;
+font-size: 1.1rem;
+line-height: 1.8;
+text-align: justify;
+}
+
+/* ===== PROPUESTA PROFESIONAL ===== */
+.propuesta {
+padding: 70px 20px;
+max-width: 1100px;
+margin: 0 auto;
+font-family: 'Poppins', sans-serif;
+text-align: center;
+}
+
+.propuesta h2 {
+font-family: 'Orbitron', sans-serif;
+font-size: 2.3rem;
+margin-bottom: 40px;
+letter-spacing: 1.5px;
+font-weight: 700;
+background: linear-gradient(90deg, var(--acento), var(--acento));
+background-clip: text;
+color: transparent;
+}
+
+.propuesta .propuesta-contenedor {
+display: grid;
+gap: 30px;
+grid-template-columns: 1fr;
+}
+
+.propuesta .bloque {
+padding: 30px;
+border-radius: 15px;
+background: rgba(15, 15, 25, 0.55);
+border: 1px solid rgba(255, 0, 255, 0.15);
+box-shadow: 0 0 10px rgba(255, 0, 255, 0.06);
+backdrop-filter: blur(4px);
+transition: 0.25s ease;
+}
+
+.propuesta .bloque:hover {
+transform: translateY(-6px) scale(1.02);
+box-shadow: 0 0 20px rgba(57,255,20,0.2), 0 0 35px rgba(255,0,255,0.2);
+}
+
+.propuesta .bloque h3 {
+font-family: 'Orbitron', sans-serif;
+font-size: 1.2rem;
+margin-bottom: 12px;
+background: linear-gradient(90deg, #ff00ff, #00eaff);
+background-clip: text;
+color: transparent;
+}
+
+.propuesta .bloque p {
+font-size: 1rem;
+color: #dcdcdc;
+line-height: 1.6;
+text-align: left;
+}
+
+@media (min-width: 768px) {
+.propuesta .propuesta-contenedor {
+grid-template-columns: 1fr 1fr;
+}
 }
 
 /* ===== GALERÍA / PORTFOLIO ===== */
 .galeria {
-  text-align: center;
-  padding: 90px 20px;
-  background: var(--fondo);
+background: radial-gradient(circle at 50% 50%, #0a0a0a, #000000);
+text-align: center;
+padding: 100px 20px;
+position: relative;
 }
 
 .galeria h2 {
-  color: var(--acento);
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-body {
-  background-color: #0b0b0f;
-  color: #f0f0f0;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
+color: var(--acento);
+font-family: 'Orbitron', sans-serif;
+font-size: 2.6rem;
+margin-bottom: 50px;
 
-header {
-  text-align: center;
-  padding: 3rem 1rem 1rem;
-  background: linear-gradient(180deg, rgba(255, 0, 255, 0.08), transparent);
-  border-bottom: 1px solid #ff00ff44;
 }
-
-header h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.5rem;
-  color: #ff00ff;
-  text-shadow: 0 0 5px #ff00ff77;
-}
-
-/* =============================
-   🎨 GALERÍA PRINCIPAL (REJILLA)
-   ============================= */
 
 .grid-trabajos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 60px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+padding: 0 40px;
 }
 
 .trabajo-item {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  border-radius: 14px;
-  overflow: hidden;
-  background-color: #141414;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+border-radius: 15px;
+overflow: hidden;
+position: relative;
+background: #111;
+box-shadow: 0 0 15px rgba(255,0,255,0.1), 0 0 30px rgba(0,255,255,0.1);
+transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .trabajo-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 18px rgba(255, 0, 255, 0.25);
-}
-
-.trabajo-item figure {
-  margin: 0;
-  position: relative;
+transform: translateY(-10px) scale(1.03);
+box-shadow: 0 0 35px rgba(255,0,255,0.3), 0 0 50px rgba(0,255,255,0.3);
 }
 
 .trabajo-item img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  display: block;
-  border-bottom: 1px solid #ff00ff33;
-  transition: transform 0.4s ease;
+width: 100%;
+height: 280px;
+object-fit: cover;
+transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .trabajo-item:hover img {
-  transform: scale(1.05);
+transform: scale(1.07);
+filter: brightness(1.1);
 }
 
 .trabajo-item figcaption {
-  padding: 1.2rem;
+  padding: 1.5rem;
   text-align: center;
-  font-weight: 500;
-  font-size: 1.1rem;
-  color: #fff;
-  background-color: #141414;
+  font-weight: 700;           /* más pesado para destacar */
+  font-size: 1.3rem;          /* más grande que antes */
+  color: #ffffff;             /* letras blancas */
+  text-shadow: none;          /* sin brillo */
+  background-color: #141414;  /* fondo oscuro */
+  transition: transform 0.3s ease, color 0.3s ease;
+  border: none;
 }
 
-/* =============================
-   🌌 EFECTOS SUAVES (SIN BRILLOS)
-   ============================= */
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  border-top: 1px solid #ff00ff33;
-  background-color: #0b0b0f;
-  color: #ccc;
-  font-size: 0.9rem;
+/* Hover sutil para atraer la atención */
+.trabajo-item:hover figcaption {
+  transform: scale(1.05);      /* agranda un poco el texto */
+  color: #39ff14;            /* opcional: azul suave al pasar el mouse */
 }
 
-a {
-  color: #00ffff;
-  transition: color 0.3s ease;
+
+
+/* ===== CONTACTO MEJORADO ===== */
+/* BOTÓN DE REDES SUAVE Y ELEGANTE */
+.redes {
+  margin-bottom: 40px;
 }
 
-a:hover {
-  color: #39ff14;
+.btn-redes {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2c2c3a, #3a3a4f); /* gradiente suave */
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid #555; /* borde discreto */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* sombra sutil */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* =============================
-   📱 RESPONSIVE
-   ============================= */
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .grid-trabajos {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 40px 20px;
-  }
-
-  .trabajo-item img {
-    height: auto;
-  }
+.btn-redes:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-/* ===== CONTACTO ===== */
+.icono-instagram {
+  font-size: 1.2rem;
+}
+
 .contacto {
   background: var(--superficie);
   padding: 90px 20px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .contacto h2 {
   color: var(--acento-sec);
   font-family: 'Orbitron', sans-serif;
-  margin-bottom: 20px;
+  font-size: 2rem;       /* más grande */
+  margin-bottom: 25px;
+  letter-spacing: 1px;
 }
 
 .contacto p {
   color: var(--texto-secundario);
   margin-bottom: 40px;
+  font-size: 1.05rem;
 }
 
 .form-contacto {
   max-width: 600px;
   margin: 0 auto;
-  background: rgba(15, 15, 20, 0.7);
-  padding: 40px;
+  background: rgba(15, 15, 20, 0.85); /* un poco más sólido */
+  padding: 45px;
   border-radius: 15px;
   border: 1px solid var(--borde);
-  box-shadow: 0 0 25px rgba(255, 0, 255, 0.1);
+  box-shadow: 0 0 30px rgba(255,0,255,0.1);
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-contacto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(255,0,255,0.2);
 }
 
 .campo {
@@ -387,66 +409,70 @@ a:hover {
   font-family: 'Orbitron', sans-serif;
   font-weight: 600;
   margin-bottom: 6px;
+  letter-spacing: 0.5px;
 }
 
 .campo input,
 .campo textarea {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid var(--borde);
-  border-radius: 8px;
+  border-radius: 10px;
   background: #111;
   color: var(--texto);
   font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .campo input:focus,
 .campo textarea:focus {
   outline: none;
-  border-color: var(--acento);
-  box-shadow: 0 0 10px rgba(57, 255, 20, 0.4);
+  border-color: var(--acento-sec);
+  box-shadow: 0 0 12px rgba(0,255,255,0.3);
 }
 
 .btn-neon {
   display: block;
   width: 100%;
-  padding: 14px;
+  padding: 16px;
   background: transparent;
-  border: 1px solid var(--acento-sec);
-  border-radius: 8px;
+  border: 2px solid var(--acento-sec);
+  border-radius: 10px;
   color: var(--acento-sec);
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
 }
 
 .btn-neon:hover {
   background: var(--acento-sec);
   color: var(--fondo);
-  box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
+  box-shadow: 0 0 35px rgba(0,255,255,0.4), 0 0 15px rgba(255,0,255,0.3);
+  transform: scale(1.03);
 }
+
 
 /* ===== FOOTER ===== */
 footer {
-  text-align: center;
-  padding: 30px;
-  border-top: 1px solid var(--borde);
-  color: var(--texto-secundario);
-  font-size: 0.9rem;
-  background: var(--fondo);
+text-align: center;
+padding: 30px;
+border-top: 1px solid var(--borde);
+color: var(--texto-secundario);
+font-size: 0.9rem;
+background: var(--fondo);
 }
 
 /* ===== ENTRADA SUAVE ===== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
 }
 
 section {
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
+opacity: 0;
+animation: fadeIn 0.8s ease forwards;
 }
 
 section:nth-of-type(1) { animation-delay: 0.3s; }
@@ -456,142 +482,125 @@ section:nth-of-type(4) { animation-delay: 1.2s; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .grid-trabajos {
-    width: 100%;
+.hero img {
+width: 60%;
+}
+
+.grid-trabajos {
+grid-template-columns: 1fr;
+gap: 20px;
+padding: 0 20px;
+}
+
+.trabajo-item img {
+height: auto;
+}
+
+.propuesta .propuesta-contenedor {
+grid-template-columns: 1fr;
+}
+
+.form-contacto {
+padding: 25px;
+}
+}
+/* ===== COLUMNA IZQUIERDA BONITA ===== */
+
+.columna-info {
+  text-align: left;
+  color: var(--texto-secundario);
+}
+
+.titulo-contacto {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.6rem;
+  color: var(--acento-sec);
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #ff00ff55;
+}
+
+.descripcion-contacto {
+  margin-bottom: 25px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #cccccc;
+  max-width: 350px;
+}
+
+/* Ajustes para que no se deforme */
+.contacto-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  margin-top: 40px;
+  flex-wrap: nowrap;
+}
+
+.contacto-wrapper .columna {
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Móvil */
+@media (max-width: 900px) {
+  .contacto-wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .trabajo-item figure {
-    border-radius: 10px;
+  .contacto-wrapper .columna {
+    max-width: 600px;
   }
 
-  .form-contacto {
-    padding: 25px;
+  .columna-info {
+    text-align: center;
   }
 
-  .hero img {
-    width: 60%;
+  .descripcion-contacto {
+    margin: 0 auto 25px;
   }
 }
-/* ======= HEADER MEJORADO CON ROSA DIFUMINADO ======= */
-.header-mejorado {
+.form-contacto textarea {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+  max-width: 480px; /* controla que no quede exagerado */
+  margin: auto;
+}
+/* ===== AJUSTE ELEGANTE DE LA CAJA DE COMENTARIOS ===== */
 
+.form-contacto textarea {
+  width: 100%;
+  max-width: 420px;   /* más pequeña y estética */
+  height: 140px;      /* alto controlado (antes se estiraba demasiado) */
+  resize: vertical;   /* permite hacerla más grande SOLO hacia abajo */
+  margin: 0 auto;     /* centrada */
+  display: block;
+  padding: 14px;
+  border-radius: 10px;
+  background: #111;
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  font-size: 1rem;
+}
+
+/* Para que el contenedor no la fuerce a estirarse */
+.form-contacto .campo {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-
-  padding: 8px 45px;
-  z-index: 999;
-
-  background: rgba(255, 0, 255, 0.08);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid #ff00ff44;
-
-  font-family: 'Orbitron', sans-serif;
 }
-
-/* HALO ROSA DIFUMINADO */
-.neon-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 40%, rgba(255,0,255,0.12), rgba(0,255,255,0.08), transparent 70%);
-  filter: blur(80px);
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-/* LOGO VERDE */
-.header-mejorado .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #00ff6a;
+.contacto h2 {
+  font-size: 2.2rem;
+  font-weight: 300;
   letter-spacing: 1px;
+  color: #f0f0f0;
+  margin-bottom: 10px;
 }
 
-/* NAV */
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #00ff6a;
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  transition: 0.3s ease;
-  position: relative;
-  padding-bottom: 3px;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #00ff6a;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-  /* 🌸 Rosa difuminado / degradado */
-.neon-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 40%, rgba(255,0,255,0.12), rgba(0,255,255,0.08), transparent 70%);
-  filter: blur(80px);
-  opacity: 0.8;
-  pointer-events: none;
-
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* LOGO VERDE */
-.header-mejorado .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #00ff6a; /* verde neón */
-  letter-spacing: 1px;
-}
-
-/* NAV */
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #00ff6a; /* verde */
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  transition: 0.3s ease;
-  position: relative;
-  padding-bottom: 3px;
-}
-
-/* Subrayado verde */
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #00ff6a;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+.contacto p {
+  font-size: 1rem;
+  color: #ccc;
+  max-width: 420px;
+  margin: 0 auto 20px auto;
+  line-height: 1.5;
 }
