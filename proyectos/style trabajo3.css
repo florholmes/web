@@ -63,6 +63,11 @@ body.pagina-trabajo {
   border-radius: 10px;
 }
 
+/* *** NUEVO: Alinear texto de la descripción a la izquierda *** */
+.galeria-neon .descripcion p {
+  text-align: left;
+}
+
 /* ================= GALERÍA ================= */
 .galeria-neon {
   background-color: #070707;
@@ -192,4 +197,23 @@ body.pagina-trabajo {
   .detalle li {
     font-size: 0.95rem;
   }
+}
+/* BOTÓN FIJO ARRIBA IZQUIERDA */
+.btn-volver {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #111;
+  color: #00ffff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
 }

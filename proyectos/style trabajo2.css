@@ -14,7 +14,7 @@ body.pagina-trabajo {
 
 /* PALETA MODERNA */
 :root {
-  --color-acento: #00ffff;
+  --color-acento: #89f397;
   --color-secundario: #ff00ff;
   --color-suave: rgba(255, 255, 255, 0.08);
   --color-texto: #f1f1f1;
@@ -192,4 +192,23 @@ body.pagina-trabajo {
   .detalle li {
     font-size: 0.95rem;
   }
+}
+/* BOTÓN FIJO ARRIBA IZQUIERDA */
+.btn-volver {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #111;
+  color: #89f397;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
 }
